@@ -1,0 +1,31 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+    <title>BWS Calculator</title>
+    <link rel="shortcut icon" type="image/jpg" href="https://i.imgur.com/SSe4MrF.png"/>
+    <link href="styles.css" rel="stylesheet">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="formula">
+        <a>
+            $$Rank^{\left(0.9937^{\left(BadgeCount^2\right)}\right)}$$
+        </a>
+    </div>
+    <div class="form__group field">
+        <input type="input" class="form__field" placeholder="Rank" name="rank" id='rank' value="1000" required />
+        <label for="rank" class="form__label">Rank</label>
+    </div>
+    <div class="form__group field">
+        <input type="input" class="form__field" placeholder="Badge" name="badge" id='badge' value="0" required />
+        <label for="badge" class="form__label">Badge Count</label>
+    </div>
+    <a id="result">1000</a>
+</body>
+</html>
