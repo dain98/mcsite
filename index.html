@@ -4,6 +4,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
     <script type="text/javascript" id="MathJax-script" async
         src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
     </script>
@@ -15,28 +16,46 @@
 <body>
     <div class="formula">
         <a>
-            $$Cost\:=\:\frac{\sum _1^n\frac{N_i}{M_i}\:}{n}\cdot \sqrt[3]{\frac{n}{m}}$$
+            $$Cost\:=\: \frac{1}{n} \displaystyle\sum _1^n\frac{N_i}{M_i}\:\cdot \sqrt[3]{\frac{n}{m}}$$
         </a>
         <c><center><i>N = the player score for each map</i></center></c>
         <c><center><i>M = the median score for each map</i></center></c>
         <c><center><i>n = the number of maps played by a player</i></center></c>
         <c><center><i>m = median of the total number of maps played</i></center></c>
     </div>
-    <div id="container">
-        <div id="left">
-            <div class="form__group field">
-                <input type="input" class="form__field" placeholder="Rank" name="rank" id='rank' value="1000" required />
-                <label for="rank" class="form__label">Rank</label>
+    <div class="row">
+        <div class="column">
+            <div class="forms">
+                <div class="form__group field" id="form">
+                    <input type="input" class="form__field" placeholder="Link #1" name="link1" id='link1' value="" required />
+                    <label for="link1" class="form__label">Multiplayer Links</label>
+                </div>
             </div>
-            <div class="form__group field">
-                <input type="input" class="form__field" placeholder="Badge" name="badge" id='badge' value="0" required />
-                <label for="badge" class="form__label">Badge Count</label>
-            </div>
+            <a class="bn3" id="addlink">Add Another Link</a>
+            <a class="bn3" id="submit" onclick="submit();">Submit</a>
         </div>
-        <div id="right">
-            <a id="result">1000</a>
+        <div class="column">
+            <table class="rwd-table" id="res">
+                <thead>
+                    <tr>
+                        <th>Player</th>
+                        <th>Cost</th>
+                        <th># of Maps Played</th>
+                      </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
         </div>
         <div class="clear"></div>
     </div>
+    <div class="action" onclick="actionToggle();">
+        <span>+</span>
+        <ul>
+          <li>Contact Me!</li>
+          <li><a href="https://twitter.com/imd_js"></a><img src="https://www.svgrepo.com/show/11841/twitter.svg" alt="" width="25px">Twitter</li>
+        </ul>
+    </div>
+      
 </body>
 </html>
