@@ -15,17 +15,28 @@
 <body>
     <div class="formula">
         <a>
-            $$Rank^{\left(0.9937^{\left(BadgeCount^2\right)}\right)}$$
+            $$Cost\:=\:\frac{\sum _1^n\frac{N_i}{M_i}\:}{n}\cdot \sqrt[3]{\frac{n}{m}}$$
         </a>
+        <c><center><i>N = the player score for each map</i></center></c>
+        <c><center><i>M = the median score for each map</i></center></c>
+        <c><center><i>n = the number of maps played by a player</i></center></c>
+        <c><center><i>m = median of the total number of maps played</i></center></c>
     </div>
-    <div class="form__group field">
-        <input type="input" class="form__field" placeholder="Rank" name="rank" id='rank' value="1000" required />
-        <label for="rank" class="form__label">Rank</label>
+    <div id="container">
+        <div id="left">
+            <div class="form__group field">
+                <input type="input" class="form__field" placeholder="Rank" name="rank" id='rank' value="1000" required />
+                <label for="rank" class="form__label">Rank</label>
+            </div>
+            <div class="form__group field">
+                <input type="input" class="form__field" placeholder="Badge" name="badge" id='badge' value="0" required />
+                <label for="badge" class="form__label">Badge Count</label>
+            </div>
+        </div>
+        <div id="right">
+            <a id="result">1000</a>
+        </div>
+        <div class="clear"></div>
     </div>
-    <div class="form__group field">
-        <input type="input" class="form__field" placeholder="Badge" name="badge" id='badge' value="0" required />
-        <label for="badge" class="form__label">Badge Count</label>
-    </div>
-    <a id="result">1000</a>
 </body>
 </html>
