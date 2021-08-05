@@ -1,11 +1,12 @@
 let addlink = document.getElementById("addlink");
 var i = 0;
-
+var form = 2;
 $(function() {
     $('#addlink').click(function(){
-        var newDiv = $('<input type="input" class="form__field" placeholder="Link #1" name="link1" id="link1" value="" required />');
+        var newDiv = $('<div class="form__group field"><input type="input" class="form__field" placeholder="Link #1" name="link1" id="link1" value="" required /><label for="link1" class="form__label">MP Link #' + form + '</label></div>');
       //newDiv.style.background = "#000";
       $('#form').append(newDiv);
+      form++;
     });
     });
 // addlink.addEventListener("click", function() {

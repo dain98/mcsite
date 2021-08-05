@@ -33,7 +33,7 @@
   color: transparent;
 }
 .form__field:placeholder-shown ~ .form__label {
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   cursor: text;
   top: 20px;
 }
