@@ -1,62 +1,85 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script type="text/javascript" 
-        src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script type="text/javascript" id="MathJax-script" async
-        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
-    </script>
-    <title>Match Costs Calculator</title>
-    <link rel="shortcut icon" type="image/jpg" href="https://i.imgur.com/FIQowlz.png"/>
-    <link href="styles.css" rel="stylesheet">
-    <script src="script.js" defer></script>
-</head>
-<body>
-    <div class="formula">
-        <a>
-            $$Cost\:=\: \frac{1}{n} \displaystyle\sum _1^n\frac{N_i}{M_i}\:\cdot \sqrt[3]{\frac{n}{m}}$$
-        </a>
-        <c><center><i>N = the player score for each map</i></center></c>
-        <c><center><i>M = the median score for each map</i></center></c>
-        <c><center><i>n = the number of maps played by a player</i></center></c>
-        <c><center><i>m = median of the total number of maps played</i></center></c>
-    </div>
-    <div class="row">
-        <div class="column">
-            <div class="forms" id="form">
-                <div class="form__group field">
-                    <input type="input" class="form__field" placeholder="Link #1" name="link1" id='link1' value="" required />
-                    <label for="link1" class="form__label">MP Link #1</label>
-                </div>
-            </div>
-            <a class="bn3" id="addlink">Add Another Link</a>
-            <a class="bn3" id="submit" onclick="submit();">Submit</a>
-        </div>
-        <div class="column">
-            <table class="rwd-table" id="res">
-                <thead>
-                    <tr>
-                        <th>Player</th>
-                        <th>Cost</th>
-                        <th># of Maps Played</th>
-                      </tr>
-                </thead>
-                <tbody>
-                </tbody>
-            </table>
-        </div>
-        <div class="clear"></div>
-    </div>
-    <div class="action" onclick="actionToggle();">
-        <span>+</span>
-        <ul>
-          <li>Contact Me!</li>
-          <li><a href="https://twitter.com/imd_js"></a><img src="https://www.svgrepo.com/show/11841/twitter.svg" alt="" width="25px">Twitter</li>
-        </ul>
-    </div>
-      
-</body>
-</html>
+
+<html>
+  <head>
+      <title>Match Costs Calculator</title>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+  
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <link rel="shortcut icon" type="image/jpg" href="https://i.imgur.com/FIQowlz.png"/>
+      <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+      <script type="text/javascript" 
+          src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+      <script src="script.js" defer></script>
+  </head>
+  <body>
+      <div class="container" >
+          <div class="card-panel white-text grey darken-4" >
+              <h3>
+                  $$Cost\:=\: \frac{1}{n} \displaystyle\sum _1^n\frac{N_i}{M_i}\:\cdot \sqrt[3]{\frac{n}{m}}$$
+              </h3>
+              <c><center><i>N = the player score for each map</i></center></c>
+              <c><center><i>M = the median score for each map</i></center></c>
+              <c><center><i>n = the number of maps played by a player</i></center></c>
+              <c><center><i>m = median of the total number of maps played</i></center></c>
+              <br/>
+              <h6 class="red-text">
+                DISCLAIMER: Mutiple MP links ONLY work when they're from the same tournament AND same round (meaning all players are using the same pool)!
+              </h6>
+          </div>
+          <div class="row">
+              <div class="col s6 pull-l1" id="first">
+                  <div>
+                      <div class="mdl-textfield mdl-js-textfield">
+                          <div class="row">
+                              <form class="col s12" id="form">
+                                <div class="row">
+                                  <div class="input-field col s9">
+                                    <input id="mplink1" type="text" class="validate white-text">
+                                    <label for="mplink">MP Link #1</label>
+                                  </div>
+                                  <div class="input-field col s3">
+                                    <input id="warmup1" type="text" class="validate white-text">
+                                    <label for="warmup1">Warmups</label>
+                                  </div>
+                                </div>
+                              </form>
+                          </div>
+                      </div>
+                  </div>
+                  <button class="btn waves-effect waves-light" type="submit" onclick="addField()"  name="action" id="add">Add Another Link
+                    <i class="material-icons right">add</i>
+                  </button>
+                  <button class="btn waves-effect waves-light" type="submit" onclick="submit()"  name="action" id="submit">Submit
+                      <i class="material-icons right">send</i>
+                  </button>
+              </div>
+              <div class="col s6 push-s1">
+                  <table class="white-text grey darken-4" class="z-depth-5" id="table">
+                      <thead>
+                        <tr>
+                            <th>Player</th>
+                            <th>Cost</th>
+                        </tr>
+                      </thead>
+              
+                      <tbody>
+                        <tr>
+                          <td>Cookiezi</td>
+                          <td>727</td>
+                        </tr>
+                        <tr>
+                          <td>DigitalHypno</td>
+                          <td>:wooper:</td>
+                        </tr>
+                      </tbody>
+                    </table>
+              </div>
+          </div>
+          <script type="text/javascript" src="js/materialize.min.js"></script>
+      </div>
+  </body>
+  </html>

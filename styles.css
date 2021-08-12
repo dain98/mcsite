@@ -11,60 +11,6 @@
   box-sizing: border-box;
 }
 
-.form__group {
-    position: relative;
-    padding: 15px 0 0;
-    margin-top: 10px;
-    width: 50%;
-}
-.form__field {
-  font-family: inherit;
-  width: 200%;
-  border: 0;
-  border-bottom: 2px solid #9b9b9b;
-  outline: 0;
-  font-size: 1.3rem;
-  color: #fff;
-  padding: 7px 0;
-  background: transparent;
-  transition: border-color 0.2s;
-}
-.form__field::placeholder {
-  color: transparent;
-}
-.form__field:placeholder-shown ~ .form__label {
-  font-size: 1.3rem;
-  cursor: text;
-  top: 20px;
-}
-.form__label {
-  position: absolute;
-  top: 0;
-  display: block;
-  transition: 0.2s;
-  font-size: 1rem;
-  color: #9b9b9b;
-}
-.form__field:focus {
-  padding-bottom: 6px;
-  font-weight: 700;
-  border-width: 3px;
-  border-image: linear-gradient(to right, #11998e, #38ef7d);
-  border-image-slice: 1;
-}
-.form__field:focus ~ .form__label {
-  position: absolute;
-  top: 0;
-  display: block;
-  transition: 0.2s;
-  font-size: 1rem;
-  color: #11998e;
-  font-weight: 700;
-}
-/* reset input */
-.form__field:required, .form__field:invalid {
-  box-shadow: none;
-}
 /* demo */
 body {
   font-family: 'Poppins', sans-serif;
@@ -132,163 +78,26 @@ c {
   }
 }
 
-.clear {
-    clear: both;
+#title {
+  color: grey;
 }
 
-.bn3 {
-  display: inline-block;
-  padding: 0.3em 0.8em;
-  margin: 0 0.1em 0.1em 0;
-  border: 0.07em solid rgb(255, 255, 255);
-  border-radius: 2em;
-  box-sizing: border-box;
-  text-decoration: none;
-  font-family: "Roboto", sans-serif;
-  font-weight: 300;
-  font-size: 18px;
-  color: #ffffff;
-  text-shadow: 0 0.04em 0.04em rgba(255, 255, 255, 0.253);
-  text-align: center;
-  transition: all 0.2s;
+#headline {
+  color: grey;
 }
 
-.bn3:hover {
-  color: black;
-  background-color: rgb(255, 255, 255);
+#display-1 {
+  color: grey;
 }
 
- .rwd-table {
-	 margin: 1em 0;
-	 min-width: 300px;
-}
- .rwd-table tr {
-	 border-top: 1px solid #ddd;
-	 border-bottom: 1px solid #ddd;
-}
- .rwd-table th {
-	 display: none;
-}
- .rwd-table td {
-	 display: block;
-}
- .rwd-table td:first-child {
-	 padding-top: 0.5em;
-}
- .rwd-table td:last-child {
-	 padding-bottom: 0.5em;
-}
- .rwd-table td:before {
-	 content: attr(data-th) ": ";
-	 font-weight: bold;
-	 width: 6.5em;
-	 display: inline-block;
-}
- @media (min-width: 480px) {
-	 .rwd-table td:before {
-		 display: none;
-	}
-}
- .rwd-table th, .rwd-table td {
-	 text-align: left;
-}
- @media (min-width: 480px) {
-	 .rwd-table th, .rwd-table td {
-		 display: table-cell;
-		 padding: 0.25em 0.5em;
-	}
-	 .rwd-table th:first-child, .rwd-table td:first-child {
-		 padding-left: 0;
-	}
-	 .rwd-table th:last-child, .rwd-table td:last-child {
-		 padding-right: 0;
-	}
-}
- .rwd-table {
-	 background: rgb(59, 59, 59);
-	 color: #fff;
-	 border-radius: 0.4em;
-	 overflow: hidden;
-}
- .rwd-table tr {
-	 border-color: #46637f;
-}
- .rwd-table th, .rwd-table td {
-	 margin: 0.5em 1em;
-}
- @media (min-width: 480px) {
-	 .rwd-table th, .rwd-table td {
-		 padding: 1em !important;
-	}
-}
- .rwd-table th, .rwd-table td:before {
-	 color: #dd5;
+.display-2 {
+  color: grey;
 }
 
-.action {
-  position: fixed;
-  bottom: 50px;
-  left: 50px;
-  width: 50px;
-  height: 50px;
-  background: #fff;
-  border-radius: 50%;
-  cursor: pointer;
-  box-shadow: 0 5px 5px rgba(0,0,0,0.1);
-}
-.action span {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #666;
-  font-size: 2em;
-  transition: .3s ease-in-out;
-}
-.action.active span  {
-  transform: rotate(135deg);
+.display-3 {
+  color: grey;
 }
 
-.action ul {
-  position: absolute;
-  bottom: 55px;
-  background: #fff;
-  min-width: 250px;
-  padding: 20px;
-  border-radius: 20px;
-  opacity: 0;
-  visibility: hidden;
-  transition: .3s;
-}
-.action.active ul {
-  bottom: 65px;
-  opacity: 1;
-  visibility: visible;
-  transition: .3s;
-}
-.action ul li {
-  list-style:none;
-   text-decoration: none;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 7px 0;
-}
-
-.action ul li:hover {
-  font-weight: 600;
-}
-.action ul li:not(:last-child) {
-  border-bottom: 1px solid rgba(0,0,0,0.1);
-}
-.action ul li img {
-  margin-right: 15px;
-  opacity: .2;
-  transform: scale(.7);
-}
-.action ul li:hover img {  
-  opacity: .8;
-  transform: scale(1.0);
+.display-4 {
+  color: grey;
 }
